@@ -1,0 +1,10 @@
+This is a test setup in order to learn vue with playwright and typeScript
+
+Setup environment with tailwindcss
+
+Admin panels with dummy data
+1. Side menu with menu items
+1. Graph of sold items
+2. Users
+3. test components with playwright 
+
