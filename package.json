@@ -15,7 +15,13 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
+    "chart.js": "^4.4.3",
+    "fortawesome": "^0.0.1-security",
     "vue": "^3.4.21",
+    "vue-chartjs": "^5.3.1",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {

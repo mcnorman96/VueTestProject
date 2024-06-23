@@ -15,7 +15,34 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (user.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/UserView.vue')
+      component: () => import('../views/UsersView.vue')
+    },
+    {
+      path: '/users/:id',
+      name: 'user:id',
+      // route level code-splitting
+      // this generates a separate chunk (user.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/UserView.vue'),
+      props: { default: true }
+    },
+    {
+      path: '/products',
+      name: 'products',
+      // route level code-splitting
+      // this generates a separate chunk (product.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/ProductsView.vue'),
+      props: { default: true }
+    },
+    {
+      path: '/products/:id',
+      name: 'product:id',
+      // route level code-splitting
+      // this generates a separate chunk (products.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/ProductView.vue'),
+      props: { default: true }
     }
   ]
 })
