@@ -1,11 +1,21 @@
 <script setup >
   import UsersList from '../components/UsersList.vue';
-  import {ref} from 'vue'
+  import {ref} from 'vue';
+  import PageLayout from '@/Layout/PageLayout.vue';
   const searchValue = ref("");
 </script>
 
 <template>
-    <h1 class="mb-5 text-xl font-bold">Users</h1>
-    <input type="text" v-model="searchValue" placeholder="search" class="absolute top-0 right-0 p-2 border">
-    <UsersList :searchValue="searchValue" />
+    <PageLayout>
+      <template v-slot:breadCrumb>
+        Admin > Users
+      </template>
+      <template v-slot:title>
+        Users
+      </template>
+      <template v-slot:pageContent>
+          <input type="text" v-model="searchValue" placeholder="search" class="absolute top-5 right-10 p-2 border">
+          <UsersList :searchValue="searchValue" />
+      </template>
+    </PageLayout>
 </template>

@@ -56,26 +56,26 @@ export default {
   <div v-if="errorMsg">
     No results
   </div>
-  <div class="m-10 tableContainer">
-    <table v-if="users.length > 0" class="w-full overflow-hidden text-left table-fixed">
-    <thead class="border-b-2 border-grey">
-      <tr>
-        <th class="p-3">Profile image</th>
-        <th class="py-3">Username</th>
-        <th v-if="!limit" class="py-3">First name</th>
-        <th v-if="!limit" class="py-3">Last name</th>
-        <th class="py-3">Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="user in users" class="border-b-2 border-grey" :value="user" :key="user">
-        <td class="p-3"><a :href="'users/' + id"><img :src=user.image class="w-10 pr-5" /></a></td>
-        <td class="py-3"><a :href="'users/' + id">{{ user.username }}</a></td>
-        <td v-if="!limit" class="py-3"><a :href="'users/' + id">{{ user.firstName }}</a></td>
-        <td v-if="!limit" class="py-3"><a :href="'users/' + id">{{ user.lastName }}</a></td>
-        <td class="py-3"><a :href="'users/' + id">{{ user.email }}</a></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="tableContainer">
+    <table v-if="users.length > 0" class="w-full overflow-hidden text-left table-fixed border">
+      <thead class="border-b-2 border-grey">
+        <tr>
+          <th class="p-3">Profile image</th>
+          <th class="py-3">Username</th>
+          <th v-if="!limit" class="py-3">First name</th>
+          <th v-if="!limit" class="py-3">Last name</th>
+          <th class="py-3">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="user in users" class="border-b-2 border-grey" :value="user" :key="user">
+          <td class="p-3"><a :href="'users/' + user.id"><img :src=user.image class="w-10 pr-5" /></a></td>
+          <td class="py-3"><a :href="'users/' + user.id">{{ user.username }}</a></td>
+          <td v-if="!limit" class="py-3"><a :href="'users/' + user.id">{{ user.firstName }}</a></td>
+          <td v-if="!limit" class="py-3"><a :href="'users/' + user.id">{{ user.lastName }}</a></td>
+          <td class="py-3"><a :href="'users/' + user.id">{{ user.email }}</a></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>

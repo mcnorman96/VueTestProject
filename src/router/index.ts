@@ -7,7 +7,10 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta: {
+        breadcrumb: "Home"
+      }
     },
     {
       path: '/users',
@@ -15,7 +18,10 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (user.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/UsersView.vue')
+      component: () => import('../views/UsersView.vue'),
+      meta:{
+        breadcrumb: "Users"
+      }
     },
     {
       path: '/users/:id',
