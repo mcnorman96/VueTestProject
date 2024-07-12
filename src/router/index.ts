@@ -7,30 +7,52 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView,
-      meta: {
-        breadcrumb: "Home"
-      }
+      component: HomeView
     },
     {
       path: '/users',
       children: [
-        { path: '', name: 'users', component: () => import('../views/UsersView.vue')},
-        { path: ':id', name: 'user:id', component: () => import('../views/UserView.vue'), props: {default: true} },
-      ], 
-      meta: {
-        breadcrumb: "Users"
-      }
+        { 
+          path: '', 
+          name: 'users', 
+          component: () => import('../views/UsersView.vue'), 
+          meta: {
+            breadcrumb: ["Admin", "Users"]
+          }
+        },
+        { 
+          path: ':id', 
+          name: 'user:id', 
+          component: () => import('../views/UserView.vue'), 
+          props: {default: true},
+          meta: {
+            breadcrumb: ["Admin", "Users", "Single User Page"]
+          }
+        },
+      ],
     },
     {
       path: '/products',
       children: [
-        { path: '', name: 'products', component: () => import('../views/ProductsView.vue'), props: {default: true}},
-        { path: ':id', name: 'product:id', component: () => import('../views/ProductView.vue'), props: {default: true} },
+        { 
+          path: '', 
+          name: 'products', 
+          component: () => import('../views/ProductsView.vue'), 
+          props: {default: true},
+          meta:  {
+             breadcrumb: ["Admin", "Products"] 
+          },
+        },
+        { 
+          path: ':id', 
+          name: 'product:id', 
+          component: () => import('../views/ProductView.vue'), 
+          props: {default: true},
+          meta: {
+             breadcrumb: ["Admin", "Products", "Single Product Page"] 
+          } 
+        },
       ],
-      meta: {
-        breadcrumb: "Products"
-      }
     }
   ]
 })

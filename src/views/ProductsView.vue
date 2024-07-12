@@ -13,9 +13,6 @@
 
 <template>
     <PageLayout>
-      <template v-slot:breadCrumb>
-        Admin > Products
-      </template>
       <template v-slot:title>
         Products
       </template>

@@ -2,14 +2,14 @@
   import UsersList from '../components/UsersList.vue';
   import {ref} from 'vue';
   import PageLayout from '@/Layout/PageLayout.vue';
+  import { useRoute } from 'vue-router';
   const searchValue = ref("");
+  const route = useRoute();  
+  const breadCrumbs = route.meta.breadcrumb;
 </script>
 
 <template>
     <PageLayout>
-      <template v-slot:breadCrumb>
-        Admin > Users
-      </template>
       <template v-slot:title>
         Users
       </template>

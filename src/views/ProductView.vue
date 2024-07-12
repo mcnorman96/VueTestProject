@@ -39,9 +39,6 @@
 
 <template>
   <PageLayout>
-      <template v-slot:breadCrumb>  
-        Admin > Products > Product
-      </template>
       <template v-slot:title>
         Single Product
       </template>

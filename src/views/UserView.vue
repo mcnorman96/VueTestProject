@@ -38,9 +38,6 @@
 
 <template>
   <PageLayout>
-      <template v-slot:breadCrumb>
-        Admin > Users > User
-      </template>
       <template v-slot:title>
         Single User
       </template>
