@@ -1,11 +1,8 @@
-<script setup >
+<script setup lang="ts">
   import UsersList from '../components/UsersList.vue';
   import {ref} from 'vue';
   import PageLayout from '@/Layout/PageLayout.vue';
-  import { useRoute } from 'vue-router';
-  const searchValue = ref("");
-  const route = useRoute();  
-  const breadCrumbs = route.meta.breadcrumb;
+  const searchValue = ref<string>("");
 </script>
 
 <template>

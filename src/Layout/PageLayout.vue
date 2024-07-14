@@ -1,14 +1,19 @@
-<script setup>
-  import { useRoute } from 'vue-router';
-  const route = useRoute();
-  const breadCrumbs = route.meta.breadcrumb;
+<script setup lang="ts">
+import { useRoute } from 'vue-router'
+const route = useRoute()
+const breadCrumbs: string[] = route.meta.breadcrumb
 </script>
 
-<template >
+<template>
   <div class="px-10 py-5 bg-gray-200 min-h-full">
     <div class="breadCrumb italic text-sm flex">
-      <div class="pr-1" v-for="(breadcrumb, index) in breadCrumbs" :value="breadcrumb" :key="breadcrumb">
-        {{ breadcrumb }} {{ index < breadCrumbs.length-1 ? '  >' : '' }}
+      <div
+        class="pr-1"
+        v-for="(breadcrumb: string, index: number) in breadCrumbs"
+        :value="breadcrumb"
+        :key="breadcrumb"
+      >
+        {{ breadcrumb }} {{ index < breadCrumbs.length - 1 ? '  >' : '' }}
       </div>
     </div>
     <div class="title mt-2">
